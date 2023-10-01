@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+das#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
@@ -27,7 +27,7 @@ import plotly.graph_objects as go
 
 import plotly.express as px
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-df = pd.read_pickle("C:/Users/PC/Desktop/projetdatascienc/projet 7/X_data.pkl")
+df = pd.read_csv("X_sample.csv")
 feats = df.columns
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
