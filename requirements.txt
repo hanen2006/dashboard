@@ -1,7 +1,7 @@
-dash==2.0.0
-dash-core-components==2.0.0
-dash-html-components==2.0.0 
-dash-renderer==2.0.0
+dash
+dash-core-components
+dash-html-components
+dash-renderer
 dash-bootstrap-components  
 requests
 flask
