@@ -25,6 +25,7 @@ df = pd.read_csv("X_sample.csv")
 feats = df.columns
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 app.layout = html.Div([
     html.Div([
@@ -109,9 +110,9 @@ def plot_bar_mean(n_clicks, client_id):
         print(e)
         return go.Figure()
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run_server(debug=True, port=port, host='0.0.0.0')
+#if __name__ == '__main__':
+    #port = int(os.environ.get("PORT", 5000))
+    #app.run_server(debug=True, port=port, host='0.0.0.0')
 # In[ ]:
 
 
