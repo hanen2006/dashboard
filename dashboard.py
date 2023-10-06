@@ -110,8 +110,8 @@ def plot_bar_mean(n_clicks, client_id):
         return go.Figure()
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=int(os.environ.get('PORT', 8050)))
-
+    port = int(os.environ.get("PORT", 5000))
+    app.run_server(debug=True, port=port, host='0.0.0.0')
 # In[ ]:
 
 
