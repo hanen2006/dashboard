@@ -1,4 +1,4 @@
-das#!/usr/bin/env python
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
@@ -6,8 +6,8 @@ das#!/usr/bin/env python
 
 from dash import Dash 
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import html
+from dash import dcc
 from dash.dependencies import Input, Output, State
 import requests
 
@@ -36,7 +36,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 app.layout = html.Div([
     html.Div([
         html.Div([
-            dcc.Input(id="client_id", type="number", value='100002'),
+            dcc.Input(id="client_id", type="number", value='146052'),
             html.Button(id="validation_bt", n_clicks=0, children="Valider")
         ],
         style={'width': '33%', "float" : "right", 'display': 'inline-block'})
@@ -140,7 +140,7 @@ def plot_bar_mean(n_clicks, client_id):
     return fig3
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=int(os.environ.get('PORT', 8050)))
 
 
 # In[ ]:
