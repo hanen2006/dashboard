@@ -41,7 +41,6 @@ with open("shapvalue.pkl", "rb") as file:
 # Chargement  du modèle
 best_model = pickle.load(open("LGBMClassifier.pkl", "rb"))
 
-from dash.exceptions import PreventUpdate
 
 ### Data
 def show_data ():
