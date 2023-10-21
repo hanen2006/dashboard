@@ -261,7 +261,7 @@ def revenu_distribution(client_id):
 def show_client_predection():
     
     
-    client_id = st.number_input("Donnez Id du Client")
+    client_id =int(st.number_input("Donnez Id du Client"))
     if st.button('Voir Client'):
         # Configuration de l'API 
         API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/predict/"+ str(client_id)
@@ -308,7 +308,7 @@ def show_client_prediction():
     selected_choice = st.radio("",('Client existant dans le dataset','Nouveau client'))
 
     if selected_choice == 'Client existant dans le dataset':
-        client_id = st.number_input("Donnez Id du Client")
+        client_id = int(st.number_input("Donnez Id du Client"))
         if st.button('Prédire Client'):
             # Configuration de l'API 
             API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/predict/"+ str(client_id)
