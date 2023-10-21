@@ -7,7 +7,6 @@ numpy
 plotly
 gunicorn
 streamlit
-pickle
 plotly
 matplotlib
 seaborn
