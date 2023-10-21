@@ -5,7 +5,7 @@
 import sys
 sys.setrecursionlimit(3000)
 
-
+import time
 import streamlit as st
 import numpy as np
 import requests
@@ -404,7 +404,7 @@ def affiche_facteurs_influence():
             data.drop(columns='TARGET', inplace=True)
                 
             explainer = shap.TreeExplainer(best_model)
-            id_input = st.number_input("Donnez Id du Client", 436755)
+            id_input = st.number_input("Donnez Id du Client")
 
             if id_input in data.index:
                 client_index = data.index.get_loc(id_input)
