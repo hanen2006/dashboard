@@ -291,7 +291,7 @@ def show_client_predection():
         # Extraire les détails du client à partir du dataframe
         
         st.subheader("Tous les détails du client :")
-        st.write(df_clients)
+        st.write(df_clients.loc[df_clients.index== client_id])
   
         
 
@@ -541,7 +541,7 @@ if selected_item == 'Solvency':
 
 if selected_item == 'Graphs':
     # Demander à l'utilisateur de saisir l'identifiant du client
-    client_id = st.number_input("Entrez l'identifiant du client")
+    client_id = int(st.number_input("Entrez l'identifiant du client"))
     
     # hist_graph()
     is_educ_selected, is_statut_selected, is_income_selected = filter_graphs()
