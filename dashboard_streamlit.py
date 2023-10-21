@@ -7,18 +7,7 @@ sys.setrecursionlimit(3000)
 
 import streamlit as st
 import numpy as np
-
-
-import os
-import requests
-
-from dash import Dash, dcc, html
-from dash.dependencies import Input, Output, State
-import plotly.graph_objects as go
-import plotly.express as px
-
 import pandas as pd
-from PIL import Image
 import pickle
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
@@ -28,13 +17,11 @@ import shap
 import os
 from urllib.request import urlopen
 import json
-import time
 import plotly.express as px
 import plotly.figure_factory as ff
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import time
 import streamlit.components.v1 as components
 from joblib import load
 from zipfile import ZipFile
@@ -43,22 +30,20 @@ import io
 # ====================================================================
 # CHARGEMENT DES DONNEES
 # ====================================================================
-data = pd.read_csv("X_sample.csv")
+data = pd.read_csv("C:/Users/PC/Desktop/projetdatascienc/projet 7/X_sample.csv")
 data.set_index('SK_ID_CURR', inplace=True)
-df_clients = pd.read_csv("X_sample_intiale.csv")
+df_clients = pd.read_csv("C:/Users/PC/Desktop/projetdatascienc/projet 7/X_sample_intiale.csv")
 df_clients.set_index('SK_ID_CURR', inplace=True)
 # Chargement des features importance de ligthgbm
-with open("shapvalue.pkl", "rb") as file:
+with open("C:/Users/PC/Desktop/projetdatascienc/projet 7/shapvalue.pkl", "rb") as file:
     shap_values= pickle.load(file)
 # Chargement  du modèle
-best_model = pickle.load(open("LGBMClassifier.pkl", "rb"))
+best_model = pickle.load(open("C:/Users/PC/Desktop/projetdatascienc/projet 7/LGBMClassifier.pkl", "rb"))
 
-from dash.exceptions import PreventUpdate
 
 ### Data
 def show_data ():
     st.write(data.head(10))
-
 
 ### Solvency
 def pie_chart(thres):
@@ -276,8 +261,7 @@ def show_client_predection():
     
     client_id = st.number_input("Donnez Id du Client", 436755)
     if st.button('Voir Client'):
-        # Configuration de l'API 
-        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
+        API_url = f"http://127.0.0.1:5001/predict/{client_id}"
         with st.spinner('Chargement du score du client...'):
             json_url = urlopen(API_url)
             API_data = json.loads(json_url.read())
@@ -323,8 +307,7 @@ def show_client_prediction():
     if selected_choice == 'Client existant dans le dataset':
         client_id = st.number_input("Donnez Id du Client", 436755)
         if st.button('Prédire Client'):
-            # Configuration de l'API 
-            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
+            API_url = "http://127.0.0.1:5001/predict/" + str(client_id)
             with st.spinner('Chargement des clients...'):
                 response = requests.get(API_url)
                 API_data = response.json()
@@ -451,9 +434,7 @@ def affiche_facteurs_influence():
             else:
                 st.error("L'identifiant fourni n'existe pas dans les données.")
 
-# ====================================================================
-# HEADER - TITRE
-# ====================================================================
+
 html_header = """
     <head>
         <title>Implémentez un modèle de scoring</title>
@@ -595,10 +576,6 @@ if selected_item == 'Fluance':
     affiche_facteurs_influence()
         
     
-
-# ====================================================================
-# FOOTER
-# ====================================================================
 html_line="""
 <br>
 <br>
