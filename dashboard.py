@@ -5,9 +5,10 @@
 import sys
 sys.setrecursionlimit(3000)
 
+<<<<<<< HEAD
 import streamlit as st
 import numpy as np
-
+=======
 
 import os
 import requests
@@ -16,10 +17,6 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import plotly.express as px
-<<<<<<< HEAD
-
-=======
->>>>>>> f7ce1a192715ea16b37b52e477d1915c240d2ea4
 import pandas as pd
 from PIL import Image
 import pickle
@@ -62,7 +59,7 @@ from dash.exceptions import PreventUpdate
 def show_data ():
     st.write(data.head(10))
 
-
+<<<<<<< HEAD
 ### Solvency
 def pie_chart(thres):
     #st.write(100* (data['TARGET']>thres).sum()/data.shape[0])
@@ -279,13 +276,8 @@ def show_client_predection():
     
     client_id = st.number_input("Donnez Id du Client", 436755)
     if st.button('Voir Client'):
-<<<<<<< HEAD
-        # Configuration de l'API 
-        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
-=======
         API_url = # Configuration de l'API 
-        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com"
->>>>>>> f7ce1a192715ea16b37b52e477d1915c240d2ea4
+        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
         with st.spinner('Chargement du score du client...'):
             json_url = urlopen(API_url)
             API_data = json.loads(json_url.read())
@@ -331,13 +323,8 @@ def show_client_prediction():
     if selected_choice == 'Client existant dans le dataset':
         client_id = st.number_input("Donnez Id du Client", 436755)
         if st.button('Prédire Client'):
-<<<<<<< HEAD
-            # Configuration de l'API 
-            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
-=======
             API_url = # Configuration de l'API 
-            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com"
->>>>>>> f7ce1a192715ea16b37b52e477d1915c240d2ea4
+            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
             with st.spinner('Chargement des clients...'):
                 response = requests.get(API_url)
                 API_data = response.json()

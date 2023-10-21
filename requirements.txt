@@ -4,7 +4,6 @@ pandas
 shap
 numpy
 plotly
-gunicorn
 streamlit
 matplotlib
 seaborn

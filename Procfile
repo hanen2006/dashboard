@@ -1,3 +1,0 @@
-web: gunicorn dashboard:server
-
-
