@@ -5,10 +5,10 @@
 import sys
 sys.setrecursionlimit(3000)
 
-<<<<<<< HEAD
+
 import streamlit as st
 import numpy as np
-=======
+
 
 import os
 import requests
@@ -59,7 +59,7 @@ from dash.exceptions import PreventUpdate
 def show_data ():
     st.write(data.head(10))
 
-<<<<<<< HEAD
+
 ### Solvency
 def pie_chart(thres):
     #st.write(100* (data['TARGET']>thres).sum()/data.shape[0])
@@ -276,7 +276,7 @@ def show_client_predection():
     
     client_id = st.number_input("Donnez Id du Client", 436755)
     if st.button('Voir Client'):
-        API_url = # Configuration de l'API 
+        # Configuration de l'API 
         API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
         with st.spinner('Chargement du score du client...'):
             json_url = urlopen(API_url)
@@ -323,7 +323,7 @@ def show_client_prediction():
     if selected_choice == 'Client existant dans le dataset':
         client_id = st.number_input("Donnez Id du Client", 436755)
         if st.button('Prédire Client'):
-            API_url = # Configuration de l'API 
+            # Configuration de l'API 
             API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
             with st.spinner('Chargement des clients...'):
                 response = requests.get(API_url)
