@@ -1,8 +1,3 @@
-dash
-dash-core-components
-dash-html-components
-dash-renderer
-dash-bootstrap-components  
 requests
 flask
 joblib
@@ -11,3 +6,12 @@ shap
 numpy
 plotly
 gunicorn
+streamlit
+pickle
+plotly
+matplotlib
+seaborn
+shap
+urllib3
+json
+
