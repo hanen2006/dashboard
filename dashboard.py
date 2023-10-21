@@ -264,7 +264,7 @@ def show_client_predection():
     client_id = st.number_input("Donnez Id du Client", 436755)
     if st.button('Voir Client'):
         # Configuration de l'API 
-        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
+        API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/predict/"+ str(client_id)
         with st.spinner('Chargement du score du client...'):
             json_url = urlopen(API_url)
             API_data = json.loads(json_url.read())
@@ -311,7 +311,7 @@ def show_client_prediction():
         client_id = st.number_input("Donnez Id du Client", 436755)
         if st.button('Prédire Client'):
             # Configuration de l'API 
-            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/"
+            API_URL = "https://projetcloud-181a7c4bddfe.herokuapp.com/predict/"+ str(client_id)
             with st.spinner('Chargement des clients...'):
                 response = requests.get(API_url)
                 API_data = response.json()
