@@ -558,7 +558,7 @@ if selected_item == 'Graphs':
 
 if selected_item == 'Distributions':
     # Demander à l'utilisateur de saisir l'identifiant du client
-    client_id = st.number_input("Entrez l'identifiant du client")
+    client_id = st.number_input("Entrez l'identifiant du client",step=1)
     
     is_age_selected,is_incomdis_selected = filter_distribution()
     if(is_age_selected=="oui"):
